@@ -1,0 +1,15 @@
+{
+    "name": "akdelf/akdmin",
+    "description": "php autoadmin",
+    "keywords": ["admin"],
+    "version": "1.4.0",
+
+    "require":{
+        "php": ">=5.2.0"
+    },
+
+    "autoload": {
+        "files": ["lib/akdmin.php"]
+    }
+
+}

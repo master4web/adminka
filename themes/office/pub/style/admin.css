@@ -1,0 +1,253 @@
+.grays  {
+	color: gray;
+}
+
+body {
+	background-color:#FFFFF0;
+}
+
+table {
+	border-width: 2px ;
+	border-spacing: 2px;
+	border-style: ridge ridge ridge ridge;
+	border-color: gray gray gray gray;
+	border-collapse: collapse;
+	background-color: #FAF0E6;
+	margin-bottom:12px;
+}
+
+
+table THEAD td {
+	border-width: 1.2px ;
+	padding: 6px 4px 6px 4px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	font-weight: bold ;
+	font-size:90%;
+	text-align: center;
+	
+}
+
+
+td.order_title{
+		background-color: white; 
+	}
+	
+td.std_title{
+		background-color: #FAF0E6; 
+	}
+
+.img_sort{
+	border: none;
+	}	
+	
+	
+table TBODY td {
+	border-width: 1px 1px 1px 1px;
+	padding: 2px 4px 2px 4px; 
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+}
+
+
+.market{
+	background-color:#EEE8CD;
+}
+.chet {
+	background-color:#F0FFF0;
+}
+
+.nechet {
+	background-color:white;
+}
+
+
+
+td#counts{
+	background-color: #FAF0E6;
+	background-image: url(left.png);
+	border-style:none;
+	color: #2F4F4F;
+	font-weight: bold ;
+}
+
+td#edits {
+	text-align: center;
+/*background-color: #FFF5EE;*/
+}
+
+
+img#rbutton{
+	border:none;
+	margin-right:6px;
+}
+
+b{
+	text-align:center;
+}
+
+
+table td a{
+	color:black;
+	text-decoration:none;
+}
+
+table td a:link{
+	text-decoration:none;
+}
+
+table td a:hover {
+	text-decoration:underline;
+}
+
+
+/* Fix IE. Hide from IE Mac \*/
+/* html ul li { float: left; height: 1%; }
+* html ul li a { height: 1%; }
+/* End */
+
+label  {
+	font-weight :bold ;
+}
+
+
+#left ul li a{
+	color:gray;
+	text-decoration:none;
+	font-weight: bold;
+	/*display: inline; /*для горизонтального размещения раскомментируйте строку */
+}
+
+#tform {
+	/*visibility: hidden;*/
+	/*margin: 130px 0px 0px 1090px;*/
+	width: 430;
+	height: 290;
+	margin-top:2700px;
+}
+
+#adress {
+	visibility:hidden;
+}
+
+#forms {
+	visibility:hidden;
+	position:absolute;
+	border-right: 2px solid #cccccc;
+	border-bottom: 2px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	margin-top:70px;
+	margin-left:25px; 
+	background-color:#FFFAFA;
+}
+
+#hlayer2{
+	visibility:hidden;
+	filter: alpha(opacity=90); 
+	opacity: 0.90;
+	position: absolute;
+	width: 430;
+	height: 290;
+	margin-top:70px;
+	margin-left:25px; 
+}
+
+
+
+#editor {
+	padding: 8px;
+}
+
+
+p#titles{
+	font-size: 80%;
+	font-family: Arial;
+	background-color: #FAEBD7;
+	color:gray;
+	margin:8px;
+	padding:4px;
+}
+
+
+#filter, #main{
+	padding:4px 8px 4px 8px;
+}
+
+
+#filter ,#page{
+	color:#696969;
+}
+ 
+#content
+{
+	position:absolute;
+	margin:0;
+	margin-top:30px;
+	margin-right:8px;
+	margin-left:0px;
+	padding:0px;
+	border-right: 2px solid #cccccc;
+	border-bottom: 2px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	width: 100%;
+}
+
+div#caption {
+	margin:0px;
+	padding: 4px;
+	background-color: #FFE4E1;
+	font-size:100%;
+	font-weight: bold;
+	letter-spacing: .4px;
+}
+
+.hidden 
+{
+  display: none;
+}
+
+.error 
+{
+  display: block;
+  margin-left: 150px;
+  color: #ff0000;
+}
+
+
+p#nameuser{
+	color: #696969;
+	margin:0;
+	padding:0;
+	margin-bottom: 4px;
+	text-align: right;
+	font-weight:bold;
+	font-size: .9em;
+	}
+
+span#closed{
+	float: right;
+	}
+
+span#closed a{
+	color: gray;
+	}
+
+span#closed a em{
+	text-decoration: none;
+	}
+	
+#search{
+	padding-left: 12px;
+}	
+	
+.sortup {
+	
+}
+
+.sortdown {
+
+}
+
+ 

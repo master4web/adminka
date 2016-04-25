@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><?=maintitle?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF8"> 
+<meta name="description" content='Интернет-версия общенационального еженедельник "Аргументы недели" ("Аргументы и время"). Все материалы бумажного издания. Самые важные события недели. Расследования, социальные проблемы, политика, экономика, культура, спорт, здоровье. Вопросы и ответы, комментарии и консультации. Еженедельный гороскоп.'> 
+<meta name="keywords" content="Газета, Общенациональная, События, Гороскоп, Общество, политика, экономика, культура, здоровье, спорт, звезды. Журналистские расследования. Интервью. Архив."> 
+<link rel="Stylesheet" type="text/css" href="<?=PUB?>style/admin.css" TYPE="text/css" />
+<link rel="stylesheet" type="text/css" href="<?=PUB?>THEMES/OFFICE_XP/office_xp.css" />
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/menu/jsdomenu.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/menu/jsdomenubar.js"></script>
+<script type="text/javascript">
+	function ismaxlength(obj){
+		var mlength=obj.getAttribute ? parseInt(obj.getAttribute("maxlength")) : ""
+		/*if (obj.getAttribute && obj.value.length > mlength)
+			obj.value=obj.value.substring(0,mlength);*/
+		document.getElementById(obj.name+ '_counts').innerHTML = document.getElementById(obj.name).value.length;
+	}
+</script>
+
+<script type="text/javascript">
+	var server = '<?=AD?>';
+	var script = server + 'index.php';
+</script>	
+
+	
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>	
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/ajax.js"></script> 
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/greatelink.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/undelete.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/rmarket.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/tinyinit.js"></script>
+<script type="text/javascript" src="<?=PUB?>js/jquery.wysiwyg.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/validate.js"></script>
+<script language="JavaScript" type="text/javascript" src="<?=PUB?>js/calendar/calendar3.js"></script>
+<script language="javascript" type="text/javascript" src="<?=PUB?>js/showcalendar.js"></script>
+<script type="text/javascript" src="<?=PUB?>AjexFileManager/ajex.js"></script>
+<script type="text/javascript" src="<?=PUB?>js/speller/spell.js"></script>
+
+
+<script type="text/javascript">
+	function createjsDOMenu() {
+
+		<?foreach ($menus as $name=>$menu):?>
+				
+			<?$nn++?>
+			<?$name_menu = 'absoluteMenu'.$nn?>
+			<?$mainmenu[$name] = $name_menu?>
+			
+			<?=$name_menu?> = new jsDOMenu(180, "absolute");
+			with (<?=$name_menu?>){
+				<?foreach ($menu as $key => $element):?>
+					addMenuItem(new menuItem("<?=$key?>", "", script + '?admin=<?=$element?>'));
+				<?endforeach?>
+			}
+
+		<?endforeach?>
+
+		absoluteMenuBar = new jsDOMenuBar("static", "staticMenuBar");
+		with (absoluteMenuBar) {
+			<?foreach ($mainmenu as $name=>$menu):?>
+				addMenuBarItem(new menuBarItem("<?=$name?>", <?=$menu?>));
+			<?endforeach?>
+			setActivateMode("over");
+		}	
+
+		
+
+	}
+
+</script>
+
+
+<script type="text/javascript">
+	
+
+	function spellCheck() {
+   		
+   		var form = document.forms["fMain"];
+   		var controls = new Array();
+   		var speller = new Speller({ url:"speller", lang:"ru", options:Speller.IGNORE_URLS });
+   		
+   		for (i=0;i < form.elements.length; i++) {
+			if (form.elements[i].type == 'text' || form.elements[i].type == 'textarea'){
+				name = form.elements[i].name;
+				controls[name] = form.elements[i];
+			}
+		}
+		speller.check( [form.elements[0], form.elements[1], form.elements[8], form.elements[9]] );
+	}
+
+</script>
+</head>	
+
+<body onload="initjsDOMenu();">
+
+ 
+
+<p id="nameuser"><?=$nameuser?> <a href="http://adanar.argumenti.ru/cgi/cleancache.cgi?bal2%20www" target="_blank">Очистить кеш</a> / <a href="reauth.php">Выход</a></p>
+<div id="staticMenuBar"></div>
+
+<div id = "content">
+	<p id = "adress"></p>
+	<div id = "buttons"></div>
+	<p id = "info"></p>
+</div>
+
+<iframe id="hlayer2" width="200" height="800" frameborder="0" hspace="0" vspace="0">
+</iframe>
+
+<div id = "forms"></div>
+
+<div id = "result"></div>
+<p id = "adress"></p>
+<iframe name =  "tform" id = "tform"></iframe>
+</body>
+</html>

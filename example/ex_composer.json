@@ -1,0 +1,21 @@
+{
+
+    "repositories":[
+        {
+            "type":"git",
+            "url":"https://github.com/akdelf/korm.git"
+        },
+        {
+            "type":"git",
+            "url":"https://github.com/akdelf/akdmin.git"
+        }
+
+    ],
+
+    "require":{
+        "php":">=5.2.0",
+        "akdelf/korm":"dev-master",
+        "akdelf/akdmin":"dev-master"
+    }
+    
+}    
