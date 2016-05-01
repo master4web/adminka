@@ -208,10 +208,13 @@ function config($fconfig) {
 		if (substr($maindir,-6) == 'config');
 			$maindir = substr($maindir, 0, -6);
 
-		$set['site_fold_ad'] =  $maindir.'/';
+		$set['site_fold_ad'] =  $maindir;
 
 	}
 
+
+	$set['vendor']=dirname(dirname(__FILE__)).'/';
+ 
 	if (!isset($set['APPPATH']))
 		$set['APPPATH'] = $set['site_fold_ad'].'app/';
 
@@ -219,10 +222,10 @@ function config($fconfig) {
 		$set['site_ad'] = $set['AD'];
 
 	if (!isset($set['THEME']))
-		$set['THEME'] = $set['site_fold_ad'].'vendor/akdelf/akdmin/themes/office/';
+		$set['THEME'] = $set['site_fold_ad'].'vendor/master4web/adminka/themes/office/';
 
 	if (!isset($set['PUB']))
-		$set['PUB'] = $set['AD'].'vendor/akdelf/akdmin/themes/office/pub/';
+		$set['PUB'] = $set['AD'].'vendor/master4web/adminka/themes/office/pub/';
 
 	if (!isset($set['psite']))
 		$set['psite'] = $set['SITE'];
@@ -253,13 +256,13 @@ if (isset($set['db'])) {
 
 
 // показываем ошибки
-if (isset($set['debug']) and $set['debug'] == 1){ 
+/*if (isset($set['debug']) and $set['debug'] == 1){ 
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 }
 else {
 	ini_set('display_errors',0);
-}
+}*/
 
 configer::load($set);
 configer::todefines();
@@ -323,6 +326,7 @@ function start(){
 	$menufile = file_get_contents(APPPATH.'menu/'.$group_id.'.json');
 	
 	$menus = json_decode($menufile, true);
+
 
 	include(THEME.'views/layout/main.phtml');
 	return;
